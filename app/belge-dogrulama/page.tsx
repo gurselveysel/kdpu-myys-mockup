@@ -1,0 +1,5 @@
+"use client";
+import { useState } from "react";
+import { PublicFooter, PublicHeader } from "@/components/public-header";
+import { DemoBanner } from "@/components/demo-banner";
+export default function Verify(){const [code,setCode]=useState("");const [done,setDone]=useState(false);return <><PublicHeader/><main id="main"><div className="login-wrap"><section className="login-card"><div className="eyebrow">Belge doğrulama</div><h2>Bir pilot belgesini sorgulayın</h2><DemoBanner/><div className="field" style={{marginTop:20}}><label htmlFor="code">Doğrulama kodu</label><input id="code" value={code} onChange={e=>setCode(e.target.value)} placeholder="Örnek: KDPÜ-MY-2026-DEMO"/></div><button className="btn btn-primary" style={{marginTop:16}} onClick={()=>setDone(Boolean(code))}>Doğrula</button>{done&&<div className="toast">Kurgusal pilot belgesi bulundu: Dijital Yetkinlikler ve Veri Okuryazarlığı · 3 AKTS · TYÇ 6. Gerçek kriptografik imza üretilmemiştir.</div>}</section></div></main><PublicFooter/></>}
