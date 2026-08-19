@@ -1,5 +1,5 @@
 allowBuilds:
-  unrs-resolver: set this to true or false
+  unrs-resolver: true
 minimumReleaseAgeExclude:
   - '@vitest/expect@4.1.11'
   - '@vitest/mocker@4.1.11'
