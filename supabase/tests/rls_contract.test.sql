@@ -1,0 +1,12 @@
+begin;
+select plan(8);
+select has_table('public','applications','applications tablosu var');
+select has_table('public','audit_logs','audit_logs tablosu var');
+select has_table('public','credentials','credentials tablosu var');
+select policies_are('public','applications',array['applications_authorized_read','applications_owner_insert','applications_authorized_update'],'applications RLS politikaları tanımlı');
+select policies_are('public','finance_records',array['finance_staff_read','finance_staff_insert','finance_staff_update'],'mali kayıt politikaları tanımlı');
+select policies_are('public','integration_jobs',array['integration_it_read','integration_it_insert','integration_it_update'],'entegrasyon politikaları tanımlı');
+select isnt_empty('select * from public.roles','roller seed edilmiştir');
+select results_eq('select count(*)::bigint from public.programs where is_published',array[3::bigint],'üç kamusal pilot programı vardır');
+select * from finish();
+rollback;

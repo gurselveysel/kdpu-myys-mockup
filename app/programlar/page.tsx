@@ -1,0 +1,3 @@
+import { PublicFooter, PublicHeader } from "@/components/public-header";
+import { programs } from "@/lib/demo-data";
+export default function Programs(){return <><PublicHeader/><main id="main"><section className="section"><div className="container"><div className="eyebrow">Örnek pilot kataloğu</div><h1 style={{fontSize:"clamp(38px,6vw,68px)"}}>Mikro yeterlilik programları</h1><p className="lead">Aşağıdaki programlar kurgusal pilot verileridir.</p><div className="grid-3" style={{marginTop:32}}>{programs.map(p=><article className="card" key={p.code}><div className="eyebrow">{p.code}</div><h3 style={{marginTop:8}}>{p.title}</h3><p className="muted">{p.unit}</p><p><b>{p.level}</b> · {p.ects} AKTS · {p.mode}</p></article>)}</div></div></section></main><PublicFooter/></>}
